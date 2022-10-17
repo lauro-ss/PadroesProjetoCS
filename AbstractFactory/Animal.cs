@@ -32,6 +32,14 @@ namespace Abstract.RealWorld
 
             world.RunFoodChain();
 
+            // Create and run the American animal world
+
+            ContinentFactory asia = new AsiaFactory();
+
+            world = new AnimalWorld(asia);
+
+            world.RunFoodChain();
+
 
             // Wait for user input
 
