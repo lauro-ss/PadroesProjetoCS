@@ -24,10 +24,12 @@ namespace Singleton.RealWorld
 
             LoadBalancer b4 = LoadBalancer.GetLoadBalancer();
 
+            LoadBalancer b5 = LoadBalancer.GetLoadBalancer();
+
 
             // Same instance?
 
-            if (b1 == b2 && b2 == b3 && b3 == b4)
+            if (b1 == b2 && b2 == b3 && b3 == b4 && b4 == b5)
             {
                 Console.WriteLine("Same instance\n");
             }
