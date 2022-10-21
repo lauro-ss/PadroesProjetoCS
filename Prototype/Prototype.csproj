@@ -37,7 +37,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Prototype.Structural.MainApp</StartupObject>
+    <StartupObject>Prototype.RealWorld.MainApp</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

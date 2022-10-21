@@ -9,7 +9,7 @@ namespace Prototype.RealWorld
     /// MainApp startup class for Real-World
     /// Prototype Design Pattern.
     /// </summary>
-    internal class MainApp
+    public class MainApp
     {
         /// <summary>
         /// Entry point into console application.
@@ -36,18 +36,26 @@ namespace Prototype.RealWorld
 
             colormanager["flame"] = new Color(211, 34, 20);
 
-            colormanager["orange"] = new Color(100, 33, 47); 
+            colormanager["orange"] = new Color(100, 33, 47);
+
+            colormanager["white"] = new Color(255, 255, 255);
+
+            colormanager["black"] = new Color(0, 0, 0);
 
 
             // User clones selected colors
 
-            var color1 = (Color) colormanager["red"].Clone() ;
+            var color1 = (Color)colormanager["red"].Clone();
 
             var color2 = colormanager["peace"].Clone() as Color;
 
             var color3 = colormanager["flame"].Clone() as Color;
 
             var color4 = colormanager["orange"].Clone() as Color;
+
+            var color5 = (Color)colormanager["white"].Clone();
+
+            var color6 = colormanager["black"].Clone() as Color;
 
 
             // Wait for user
