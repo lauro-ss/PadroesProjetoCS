@@ -46,6 +46,12 @@ namespace Builder.RealWorld
 
             builder.Vehicle.Show();
 
+            builder = new BusBuilder();
+
+            shop.Construct(builder);
+
+            builder.Vehicle.Show();
+
 
             // Wait for user
 
@@ -170,6 +176,38 @@ namespace Builder.RealWorld
         public override void BuildDoors()
         {
             vehicle["doors"] = "4";
+        }
+    }
+
+    internal class BusBuilder : VehicleBuilder
+    {
+        public BusBuilder()
+        {
+            vehicle = new Vehicle("Bus");
+        }
+
+
+        public override void BuildFrame()
+        {
+            vehicle["frame"] = "Bus Frame";
+        }
+
+
+        public override void BuildEngine()
+        {
+            vehicle["engine"] = "2000 cc";
+        }
+
+
+        public override void BuildWheels()
+        {
+            vehicle["wheels"] = "4";
+        }
+
+
+        public override void BuildDoors()
+        {
+            vehicle["doors"] = "2";
         }
     }
 
