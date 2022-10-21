@@ -38,6 +38,10 @@ namespace Adapter.RealWorld
 
             ethanol.Display();
 
+            Compound gasolina = new RichCompound("Gasolina");
+
+            gasolina.Display();
+
 
             // Wait for user
 
@@ -144,12 +148,15 @@ namespace Adapter.RealWorld
                     case "ethanol":
                         return -114.1f;
 
+                    case "gasolina":
+                        return -115.0f;
+
                     default:
                         return 0f;
                 }
             }
 
-                // Boiling Point
+            // Boiling Point
 
             else
             {
@@ -163,6 +170,9 @@ namespace Adapter.RealWorld
 
                     case "ethanol":
                         return 78.3f;
+
+                    case "gasolina":
+                        return 79.0f;
 
                     default:
                         return 0f;
@@ -184,6 +194,9 @@ namespace Adapter.RealWorld
                 case "ethanol":
                     return "C2H5OH";
 
+                case "gasolina":
+                    return "C8H8";
+
                 default:
                     return "";
             }
@@ -202,6 +215,9 @@ namespace Adapter.RealWorld
 
                 case "ethanol":
                     return 46.0688;
+
+                case "gasolina":
+                    return 18.000;
 
                 default:
                     return 0d;
