@@ -39,6 +39,16 @@ namespace Composite.RealWorld
 
             root.Add(comp);
 
+            // Second branch
+
+            var comp2 = new CompositeElement("Two Lines");
+
+            comp2.Add(new PrimitiveElement("Purple Line"));
+
+            comp2.Add(new PrimitiveElement("Pink Line"));
+
+            root.Add(comp2);
+
 
             // Add and remove a PrimitiveElement
 
