@@ -115,6 +115,20 @@ namespace Facade.RealWorld
         private readonly Credit _credit = new Credit();
         private readonly Loan _loan = new Loan();
 
+        public bool HasSufficientSavings(Customer c, int amount)
+        {
+            return _bank.HasSufficientSavings(c, amount);
+        }
+
+        public bool HasGoodCredit(Customer c)
+        {
+            return _credit.HasGoodCredit(c);
+        }
+
+        public bool HasNoBadLoans(Customer c)
+        {
+            return _loan.HasNoBadLoans(c);
+        }
 
         public bool IsEligible(Customer cust, int amount)
         {
