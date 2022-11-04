@@ -35,6 +35,21 @@ namespace Observer.RealWorld
 
             ibm.Price = 120.75;
 
+            var codeficando = new Codeficando("Codeficando", 3000.00);
+
+            codeficando.Attach(new Investor("ZeSmoke"));
+
+            codeficando.Attach(new Investor("Garelax"));
+
+            codeficando.Attach(new Investor("Dósea"));
+
+            codeficando.Price = 120.10;
+
+            codeficando.Price = 121.00;
+
+            codeficando.Price = 120.50;
+
+            codeficando.Price = 120.75;
 
             // Wait for user
 
@@ -123,6 +138,16 @@ namespace Observer.RealWorld
         // Constructor
 
         public IBM(string symbol, double price)
+            : base(symbol, price)
+        {
+        }
+    }
+
+    internal class Codeficando : Stock
+    {
+        // Constructor
+
+        public Codeficando(string symbol, double price)
             : base(symbol, price)
         {
         }
