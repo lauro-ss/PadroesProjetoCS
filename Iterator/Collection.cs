@@ -38,6 +38,10 @@ namespace Iterator.RealWorld
 
             collection[8] = new Item("Item 8");
 
+            collection[7] = new Item("Item 9");
+
+            collection[8] = new Item("Item 10");
+
 
             // Create iterator
 
@@ -46,7 +50,7 @@ namespace Iterator.RealWorld
 
             // Skip every other item
 
-            iterator.Step = 2;
+            iterator.Step = 1;
 
 
             Console.WriteLine("Iterating over collection:");
