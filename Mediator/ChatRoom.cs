@@ -31,6 +31,10 @@ namespace Mediator.RealWorld
 
             Participant Yoko = new NonBeatle("Yoko");
 
+            Participant ZeSmoke = new Beatle("ZeSmoke");
+
+            Participant Garelax = new NonBeatle("Garelax");
+
 
             chatroom.Register(George);
 
@@ -41,6 +45,10 @@ namespace Mediator.RealWorld
             chatroom.Register(John);
 
             chatroom.Register(Yoko);
+
+            chatroom.Register(ZeSmoke);
+
+            chatroom.Register(Garelax);
 
 
             // Chatting participants
@@ -54,6 +62,10 @@ namespace Mediator.RealWorld
             Paul.Send("John", "Can't buy me love");
 
             John.Send("Yoko", "My sweet love");
+
+            ZeSmoke.Send("Garelax", "Arizona will gona open today?");
+
+            Garelax.Send("ZeSmoke", "It's open 24 hours, we never are closed!");
 
 
             // Wait for user
