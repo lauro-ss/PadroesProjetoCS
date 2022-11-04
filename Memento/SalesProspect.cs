@@ -20,6 +20,7 @@ namespace Memento.RealWorld
             s.Name = "Noel van Halen";
 
             s.Phone = "(412) 256-0990";
+            s.Tell = "0800 777 7000";
 
             s.Budget = 25000.0;
 
@@ -29,13 +30,14 @@ namespace Memento.RealWorld
             var m = new ProspectMemory();
 
             s.SaveMemento(m.Memento);
-            
+
 
             // Continue changing originator
 
             s.Name = "Leo Welch";
 
             s.Phone = "(310) 209-7111";
+            s.Tell = "4002-8922";
 
             s.Budget = 1000000.0;
 
@@ -65,6 +67,7 @@ namespace Memento.RealWorld
         private string _name;
 
         private string _phone;
+        private string _tell;
 
 
         // Gets or sets name
@@ -96,6 +99,18 @@ namespace Memento.RealWorld
             }
         }
 
+        public string Tell
+        {
+            get { return _tell; }
+
+            set
+            {
+                _tell = value;
+
+                Console.WriteLine("Tell: " + _tell);
+            }
+        }
+
 
         // Gets or sets budget
 
@@ -118,14 +133,14 @@ namespace Memento.RealWorld
         {
             Console.WriteLine("\nSaving state --\n");
 
-            var next = new Memento(_name, _phone, _budget);
+            var next = new Memento(_name, _phone, _tell, _budget);
             atual.NextMemento = next;
             next.PreviousMemento = atual;
 
             return next;
         }
 
-        public Memento Undo(Memento atual )
+        public Memento Undo(Memento atual)
         {
             return atual.PreviousMemento;
         }
@@ -157,11 +172,13 @@ namespace Memento.RealWorld
     {
         // Constructor
 
-        public Memento(string name, string phone, double budget)
+        public Memento(string name, string phone, string tell, double budget)
         {
             Name = name;
 
             Phone = phone;
+
+            Tell = tell;
 
             Budget = budget;
         }
@@ -175,6 +192,8 @@ namespace Memento.RealWorld
         // Gets or set phone
 
         public string Phone { get; set; }
+
+        public string Tell { get; set; }
 
 
         // Gets or sets budget
