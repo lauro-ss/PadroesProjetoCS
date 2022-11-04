@@ -46,6 +46,10 @@ namespace Strategy.RealWorld
 
             studentRecords.Sort();
 
+            studentRecords.SetSortStrategy(new EstouComSort());
+
+            studentRecords.Sort();
+
 
             // Wait for user
 
@@ -101,6 +105,16 @@ namespace Strategy.RealWorld
             //list.MergeSort(); not-implemented
 
             Console.WriteLine("MergeSorted list ");
+        }
+    }
+
+    internal class EstouComSort : SortStrategy
+    {
+        public override void Sort(List<string> list)
+        {
+            //list.EstouComSort(); not-implemented
+
+            Console.WriteLine("EstouComSorted list ");
         }
     }
 
