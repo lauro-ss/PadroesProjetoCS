@@ -21,11 +21,14 @@ namespace Chain.RealWorld
 
             Approver tammy = new President();
 
+            Approver dilma = new Presidenta();
+
 
             larry.SetSuccessor(sam);
 
             sam.SetSuccessor(tammy);
 
+            tammy.SetSuccessor(dilma);
 
             // Generate and process purchase requests
 
@@ -40,6 +43,10 @@ namespace Chain.RealWorld
 
 
             p = new Purchase(2036, 122100.00, "Project Y");
+
+            larry.ProcessRequest(p);
+
+            p = new Purchase(2036, 200000.0, "Project Z");
 
             larry.ProcessRequest(p);
 
@@ -119,6 +126,25 @@ namespace Chain.RealWorld
         public override void ProcessRequest(Purchase purchase)
         {
             if (purchase.Amount < 100000.0)
+            {
+                Console.WriteLine("{0} approved request# {1}",
+                                  GetType().Name, purchase.Number);
+            }
+
+            else
+            {
+                Console.WriteLine(
+                    "Request# {0} requires an executive meeting!",
+                    purchase.Number);
+            }
+        }
+    }
+
+    internal class Presidenta : Approver
+    {
+        public override void ProcessRequest(Purchase purchase)
+        {
+            if (purchase.Amount < 200000.0)
             {
                 Console.WriteLine("{0} approved request# {1}",
                                   GetType().Name, purchase.Number);
